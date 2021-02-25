@@ -1,0 +1,62 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <form [formGroup]="profileForm" class="formStyle">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>New Post</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input formControlName="title" matInput placeholder="title" />
+              </mat-form-field>
+            </div>
+            <!-- <div class="col-md-6 top-padding">
+                  <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Select date</mat-label>
+                    <input formControlName="date" matInput [matDatepicker]="picker" />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker"
+                    ></mat-datepicker-toggle>
+                    <mat-datepickere #picker></mat-datepickere>
+                  </mat-form-field>
+                </div> -->
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input formControlName="date" matInput placeholder="date" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input formControlName="url" matInput placeholder="url" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <textarea
+                  formControlName="description"
+                  matInput
+                  placeholder="description"
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="start">
+          <button (click)="submitedForm()" mat-stroked-button>Submit</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div *ngFor="let feeds of feeds">
+      <app-card [feeds]="feeds" class="container"></app-card>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<div class="formfield"></div>

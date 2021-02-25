@@ -1,0 +1,122 @@
+<div class="container">
+  <h1>Applications web "Full Stack"</h1>
+  <h2>Objectif de formation :</h2>
+  <p>
+    Développement d'une application Full stack utilisant les technologies
+    MongoDB, Node.js, Nest.js et Angular
+  </p>
+  <h4>Angular</h4>
+  <ul>
+    <li>Bases (components, directives)</li>
+    <li>Data services</li>
+    <li>Rxjs</li>
+  </ul>
+
+  <h4>Node.js / Nest.js</h4>
+  <ul>
+    <li>Models / DB</li>
+    <li>Services</li>
+    <li>Controllers</li>
+  </ul>
+
+  <h2>Application à développer : "ImageBook"</h2>
+
+  <p>
+    L'objectif de l'application est de collectionner des images et de permettre
+    à tous les utilisateurs de les commenter. Spécifications de base :
+  </p>
+
+  <h4>
+    1. Le book organise les images par catégories, chaque image possède donc une
+    catégorie.
+  </h4>
+  <h4>2. Chaque image possède également au minimum les attributs suivants :</h4>
+  <ul>
+    <li>Un titres</li>
+    <li>Une url</li>
+    <li>Une date de réalisation</li>
+    <li>Une date d'ajout</li>
+    <li>Une description</li>
+    <li>Un flag (booléen) indiquant si elle a été supprimée</li>
+  </ul>
+
+  <h2>User Stories</h2>
+  <p>
+    Chacune des stories a pour objectif d'assimiler une partie du framework
+    Angular.
+  </p>
+  <h4>
+    1. Principes de base des composants : L'utilisateur doit pouvoir lister
+    toutes les images. Cette liste doit au minimum afficher le titre de l'image
+    et la date de réalisation. Elle doit afficher une vignette de l'image.
+  </h4>
+  <h4>
+    2. Directives : Par défaut les images indiquées comme supprimées ne doivent
+    pas apparaitre dans la liste. Un bouton doit permettre à l'utilisateur
+    d'également afficher, dans la liste, les images supprimées.
+  </h4>
+  <h4>
+    3. Composant+Directive : l'utilisateur doit pouvoir "consulter" les détails
+    d'une image. A partir de la liste, en sélectionnant une image, le détail de
+    l'image est affiché en grand, à côté de la liste (ou en dessous, la partie
+    css n'est pas importante ici). Dans cette vue en détail, l'image doit être
+    affichée en grand, et tous les attributs doivent être affichés. Si l'on
+    sélectionne une autre image, les informations sont adaptées.
+  </h4>
+  <h4>
+    4. Forms : Dans la vue détaillée d'une image, un petit formulaire permet à
+    l'utilisateur d'ajouter un commentaire dans l'image. Il faut donc également
+    adapter le modèle de données d'une image pour y conserver plusieurs
+    commentaires. Tous les commentaires sont visibles l'un en dessous de
+    l'autre. En dernier le formulaire permet d'en ajouter un.
+  </h4>
+  <h4>
+    5. Forms : validation Il faudrait que chaque nouveau commentaire ajouté se
+    termine par une ponctuation de fin de phrase. Le formulaire doit donc
+    contrôler que le contenu du commentaire se termine par l'un des droits
+    caractères suivants : . ? ! Si le message n'est pas validé, le bouton pour
+    enregistrer le commentaire ne doit pas être actif et un message indiquant
+    qu'il manque une ponctuation en fin de message doit être présent en dessous
+    de l'input du commentaire.
+  </h4>
+
+  <h2>Tâches</h2>
+  <h4>1. Initialiser un projet back-end Nest.Js</h4>
+  <ul>
+    <li>1. Base de données MongoDB</li>
+    <li>2. Modèle "business" pour la resource "Image"</li>
+    <li>3. Schéma DB correspondant pour MongoDB</li>
+    <li>4. CRUD complet pour la resource "Image"</li>
+    <ul>
+      <li>1. Un service doit s'occuper de toute la logique Business ↔ DB</li>
+      <li>
+        2. Un controller s'occupe des routes CRUD avec des modèles DTO et la
+        communication vers le service
+      </li>
+      <li>
+        3. Idéalement implémenter un mapper entre les modèles DB ↔ model
+        business ↔ DTO
+      </li>
+    </ul>
+  </ul>
+  <h4>2. Tester tous les appels CRUD à l'aide du programme Insomnia</h4>
+  <H4>3. Initialiser un projet Angular ( version > 10)</H4>
+  <h4>4. Implémenter les users stories 1 à 1 (voir ci-dessus)</h4>
+
+  <h2>Comment démarrer</h2>
+
+  <ul>
+    <li>Nest.JS : https://docs.nestjs.com/first-steps</li>
+    <li>
+      MongoDB :
+      https://docs.mongodb.com/manual/administration/install-community/
+    </li>
+    <li>Insomnia Core : o https://insomnia.rest/products/core/</li>
+    <li>https://support.insomnia.rest/article/11-getting-started</li>
+    <li>Angular : https://angular.io/tutorial/toh-pt0</li>
+    <li>
+      Material : https://material.angular.io/components/categories o + livre
+      ng-book2 (Dossier partagé "Tous")
+    </li>
+  </ul>
+</div>

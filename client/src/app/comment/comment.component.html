@@ -1,0 +1,7 @@
+<p>{{ comments.comment }}</p>
+<form [formGroup]="profileForm">
+  <input formControlName="comment" matInput placeholder="Write your comment" />
+  <mat-card-actions align="start">
+    <button (click)="OnComment()" mat-stroked-button>Submit</button>
+  </mat-card-actions>
+</form>
