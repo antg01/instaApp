@@ -9,7 +9,7 @@
   align-items: center;
   margin: 20px;
 }
-.example-container {
+.sidNav-container {
   position: absolute;
   margin-top: 55px;
   top: 0;
@@ -17,4 +17,13 @@
   left: 0;
   right: 0;
   background: #eee;
+}
+
+.searchBar {
+  padding: 10px;
+  margin: 10px;
+  width: 600px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
 }

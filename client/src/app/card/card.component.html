@@ -1,7 +1,9 @@
 <mat-card class="card">
   <mat-card-header>
-    <mat-card-title> {{ feeds.title }} </mat-card-title>
-    <mat-card-subtitle>{{ feeds.date }}</mat-card-subtitle>
+    <mat-card-title> {{ feed.title }} </mat-card-title>
+    <mat-card-subtitle
+      >{{ feed.date | date }} {{ feed.category | uppercase }}</mat-card-subtitle
+    >
 
     <img
       src="http://software.brussels/wp-content/uploads/2018/05/intuitimLogo.jpg"
@@ -9,15 +11,15 @@
     />
 
     <mat-card-actions class="btn" align="end">
-      <button (click)="deleteFeed(feeds.title); refresh()" mat-stroked-button>
+      <button (click)="deleteFeed(feed.title); refresh()" mat-stroked-button>
         🗑️
       </button>
     </mat-card-actions>
   </mat-card-header>
-  <img src="{{ feeds.url }}" mat-card-image />
+  <img [src]="imgSwitch()" mat-card-image />
   <mat-card-content>
-    <h3>{{ feeds.description }}</h3>
-    <p>{{ feeds.comment }}</p>
+    <h3>{{ feed.description }}</h3>
+    <p>{{ feed.comment }}</p>
   </mat-card-content>
   <form [formGroup]="profileForm">
     <input
@@ -26,7 +28,7 @@
       placeholder="Write your comment"
     />
     <mat-card-actions align="start">
-      <button (click)="OnComment(feeds.title); refresh()" mat-stroked-button>
+      <button (click)="OnComment(feed.title); refresh()" mat-stroked-button>
         Submit
       </button>
     </mat-card-actions>

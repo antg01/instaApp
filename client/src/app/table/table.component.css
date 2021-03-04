@@ -10,3 +10,11 @@ table {
   width: 30px;
   height: 30px;
 }
+.searchBar {
+  padding: 10px;
+  margin: 10px;
+  width: 600px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+}

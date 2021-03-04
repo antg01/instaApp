@@ -18,10 +18,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { CommentComponent } from './comment/comment.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-// import { Component } from '@angular/core';
+import { MatSelectModule } from '@angular/material/select';
+import { FeedFilterPipe } from './feed-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     CardComponent,
     TableComponent,
     CommentComponent,
+    FeedFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSidenavModule,
+    MatOptionModule,
+    MatSelectModule,
   ],
   providers: [DatadbService],
   bootstrap: [AppComponent],

@@ -1,4 +1,4 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="sidNav-container">
   <mat-sidenav mode="side" opened>
     <form [formGroup]="profileForm" class="formStyle">
       <mat-card>
@@ -9,29 +9,45 @@
           <div class="row">
             <div class="col-md-6">
               <mat-form-field class="full-width">
-                <input formControlName="title" matInput placeholder="title" />
-              </mat-form-field>
-            </div>
-            <!-- <div class="col-md-6 top-padding">
-                  <mat-form-field class="full-width" appearance="fill">
-                    <mat-label>Select date</mat-label>
-                    <input formControlName="date" matInput [matDatepicker]="picker" />
-                    <mat-datepicker-toggle
-                      matSuffix
-                      [for]="picker"
-                    ></mat-datepicker-toggle>
-                    <mat-datepickere #picker></mat-datepickere>
-                  </mat-form-field>
-                </div> -->
-            <div class="col-md-6">
-              <mat-form-field class="full-width">
-                <input formControlName="date" matInput placeholder="date" />
+                <input
+                  formControlName="title"
+                  matInput
+                  placeholder="title"
+                  required
+                />
               </mat-form-field>
             </div>
 
             <div class="col-md-6">
               <mat-form-field class="full-width">
-                <input formControlName="url" matInput placeholder="url" />
+                <mat-label>choose a date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  formControlName="date"
+                  required
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <mat-label>category</mat-label>
+                <mat-select
+                  formControlName="category"
+                  matNativeControl
+                  required
+                >
+                  <mat-option value="desk">Desk Setup</mat-option>
+                  <mat-option value="code">Code</mat-option>
+                  <mat-option value="music">Music</mat-option>
+                  <mat-option value="travel">Travel</mat-option>
+                </mat-select>
               </mat-form-field>
             </div>
 
@@ -41,6 +57,7 @@
                   formControlName="description"
                   matInput
                   placeholder="description"
+                  required
                 ></textarea>
               </mat-form-field>
             </div>
@@ -53,10 +70,17 @@
     </form>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div *ngFor="let feeds of feeds">
-      <app-card [feeds]="feeds" class="container"></app-card>
+    <div class="container">
+      <input
+        type="search"
+        placeholder="Search..."
+        class="searchBar"
+        (keyup)="applyFilter($event)"
+      />
+    </div>
+
+    <div *ngFor="let feed of feeds">
+      <app-card [feed]="feed" class="container"></app-card>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<div class="formfield"></div>

@@ -1,9 +1,12 @@
+<div class="container">
+  <input
+    type="search"
+    placeholder="Search..."
+    class="searchBar"
+    (keyup)="applyFilter($event)"
+  />
+</div>
 <table [dataSource]="feeds" mat-table class="mat-elevation-z8">
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>No.</th>
-    <td mat-cell *matCellDef="let feeds">{{ feeds.id }}</td>
-  </ng-container>
-
   <ng-container matColumnDef="title">
     <th mat-header-cell *matHeaderCellDef>Title</th>
     <td mat-cell *matCellDef="let feeds">{{ feeds.title }}</td>
@@ -11,15 +14,15 @@
 
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef>Date</th>
-    <td mat-cell *matCellDef="let feeds">{{ feeds.date }}</td>
+    <td mat-cell *matCellDef="let feeds">{{ feeds.date | date }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="url">
-    <th mat-header-cell *matHeaderCellDef>Url</th>
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef>Category</th>
     <td mat-cell *matCellDef="let feeds">
       <div class="imgDis">
-        <img src="{{ feeds.url }}" alt="img" class="imgTab" />
-        {{ feeds.url }}
+        <img [src]="imgSwitchTable()" alt="img" class="imgTab" />
+        {{ feeds.category }}
       </div>
     </td>
   </ng-container>

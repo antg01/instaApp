@@ -13,7 +13,7 @@ export class AppComponent {
   profileForm = this.formBuilder.group({
     title: [''],
     date: [''],
-    url: [''],
+    category: [''],
     description: [''],
   });
 }
